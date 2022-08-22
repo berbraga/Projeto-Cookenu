@@ -1,5 +1,5 @@
-import { IdGenerator } from './../services/generateId';
-import { UserDataBase } from '../data/UserDataBase';
+import { IdGenerator } from '../Services/GenerateId';
+import { UserDataBase } from '../Data/UserDataBase';
 import { Request, Response } from "express";
 
 export async function getOtherUser(req: Request, res: Response) {

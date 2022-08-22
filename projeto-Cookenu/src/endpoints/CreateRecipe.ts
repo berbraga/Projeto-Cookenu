@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { ReceitaDataBase } from "../data/ReceitaDataase";
-import { IdGenerator } from "../services/generateId";
+import { ReceitaDataBase } from "../Data/ReceitaDataase";
+import { IdGenerator } from "../Services/GenerateId";
 
 export async function postCreateRecipe(req: Request, res: Response) {
 

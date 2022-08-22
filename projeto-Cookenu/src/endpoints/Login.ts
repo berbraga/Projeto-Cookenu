@@ -1,6 +1,6 @@
-import { hashManager } from './../services/hashes';
+import { hashManager } from '../Services/GenerateHash';
 import { Request, Response } from 'express'
-import { UserDataBase } from '../data/UserDataBase';
+import { UserDataBase } from '../Data/UserDataBase';
 
 
 
