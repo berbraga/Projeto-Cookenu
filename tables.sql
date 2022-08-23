@@ -8,13 +8,13 @@ drop table User ;
 
 drop table Followeres ;
 
-drop table Receita ;
+drop table Recipe ;
 
 create table
     if not exists User (
-        id_usuario varchar(300) not null primary key,
+        id_usuario varchar(300) not null primary key UNIQUE,
         name varchar(100) not null,
-        email varchar(150) not null,
+        email varchar(150) not null UNIQUE,
         password varchar(500) not null,
         role varchar(6) not null
     );
@@ -31,7 +31,7 @@ create table
 
 create table
     Recipe (
-        id_receita varchar(300) not null primary key,
+        id_receita varchar(300) not null primary key unique,
         title varchar(100) not null,
         description text not null,
         data_preparo date not null,

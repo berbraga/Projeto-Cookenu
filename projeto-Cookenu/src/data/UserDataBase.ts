@@ -3,6 +3,7 @@ import UserModel from '../Model/UserModel';
 import { connection } from "./Connection";
 
 
+const TABLE_USER = 'User'
 
 
 export class UserDataBase {
@@ -11,7 +12,13 @@ export class UserDataBase {
 
         try {
             console.log(user);
-            await connection('User')  //.insert({id_usuario: user.name: password: user.getPassword(),role: user.getRole()})
+            await connection(TABLE_USER).insert({
+                id_usuario: user.getId(),
+                name: user.getName(),
+                email: user.getEmail(),
+                password: user.getPassword(),
+                role: user.getRole()
+            })
 
 
 
@@ -23,16 +30,16 @@ export class UserDataBase {
 
 
     }
-}
 
-//     public async getUser() {
-//         try {
-//             const result = await BaseDataBase.connection('Usuario')
-//             return result
-//         } catch (error) {
-//             throw new Error('deu erro no getUser Class')
-//         }
-//     }
+
+    public async getUser() {
+        try {
+            const result = await connection(TABLE_USER)
+            return result
+        } catch (error) {
+            throw new Error('deu erro no getUser Class')
+        }
+    }
 
 //     public async getTokenUser(email: string): Promise<any> {
 
@@ -71,3 +78,6 @@ export class UserDataBase {
 
 //         }
 //     }
+
+
+}

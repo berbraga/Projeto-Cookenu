@@ -19,6 +19,12 @@ const userController = new UserController()
 
 
 app.post('/signup', userController.Signup)
+app.post('/login', userController.Login)
+
+app.get('/user', userController.GetUser)
+app.get('/user/other', userController.GetOtherUser)
+
+
 
 
 // app.post('/signup', signup);
